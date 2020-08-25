@@ -4,6 +4,16 @@ function ToDoList() {
   this.taskId = 0;
 }
 
+ToDoList.prototype.addTask = function(task) {
+  task.id = this.assignId();
+  this.tasks.push(task);
+}
+
+ToDoList.prototype.assignId = function() {
+  this.taskId += 1;
+  return this.taskId;
+}
+
 
 
 // Business Logic for Tasks
